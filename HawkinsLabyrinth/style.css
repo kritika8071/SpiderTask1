@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body{
+    height: 100vh;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cell.hidden {
+    background: #1a2e2e;
+    border: 1.5px solid #2d5050;
+    color: #7ab8b8;
+    animation: breathe 3s ease-in-out infinite;
+}
+@keyframes breathe {
+    0%, 100% { box-shadow: inset 0 0 18px #2d505055; }
+    50%       { box-shadow: inset 0 0 36px #3d888866; }
+}
+
+.cell.real-world {
+    background: #6b4510;
+    border: 2px solid #c8821a;
+    color: #f5c842;
+    animation: neon-amber 2.5s ease-in-out infinite;
+}
+@keyframes neon-amber {
+    0%, 100% { box-shadow: 0 0 8px #c8821a, inset 0 0 14px #c8821a33; }
+    50%       { box-shadow: 0 0 18px #f5c842, inset 0 0 26px #f5c84244; }
+}
+
+.cell.upside-down {
+    background: #1a0000;
+    border: 2px solid #8b0000;
+    box-shadow: inset 0 0 30px #8b0000;
+    filter: url(#corrupt); /* SVG turbulence filter */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Vine creeping from corner */
+.cell.upside-down::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 40%; height: 40%;
+    background: #2d4a1e;
+    border-radius: 0 80% 0 0;
+    opacity: 0.7;
+}
+
+/* Floating spores */
+.cell.upside-down::after {
+    content: '';
+    position: absolute;
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: transparent;
+    /* Create multiple spore dots via box-shadow */
+    box-shadow: 10px 20px #ff4500, 25px 10px #ff6347, 40px 30px #dc143c;
+    animation: float-spores 4s infinite ease-in-out;
+}
+
+@keyframes float-spores {
+    0%   { transform: translateY(0px) }
+    50%  { transform: translateY(-15px) }
+    100% { transform: translateY(0px) }
+}
+
+.topPart{
+    color: white;
+    height: 10%;
+    width: 100%;
+    position: relative;
+}
+
+#playerHealth{
+    position: absolute;
+    top: 4%;
+    left: 2%;
+}
+
+#vecnaHealth{
+    position: absolute;
+    top: 4%;
+    right: 2%;
+}
+
+.bottomPart{
+    height: 90%;
+    display: flex;
+}
+
+.container{
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(5, min(7vw, 80px));
+    grid-template-rows: repeat(5, min(7vw, 70px));
+}
+
+.container1{
+    position: relative;
+    height: 100vh;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+}
+
+.container2{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#spider{
+    position: absolute;
+    font-size: 40px;
+}
+
+#dice{
+    width: min(100px, 14vw, 14vh);
+    height: min(100px, 14vh, 14vw);
+    background-color: blue;
+    border-radius: 7%;
+    position: absolute;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: 500;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+#req{
+    width: min(100px, 14vw, 14vh);
+    height: min(100px, 14vh, 14vw);
+    background-color: green;  
+    border-radius: 7%;  
+    position: absolute;
+    bottom: 30%;
+    font-size: 1.5rem;
+}
+
+#top{
+    position: absolute;
+    left: 45%;
+}
+
+#bottom{
+    position: absolute;
+    bottom: 2%;
+    left: 45%;
+}
+
+#left{
+    position: absolute;
+    top: 35%;
+    left: 3%;
+}
+
+#right{
+    position: absolute;
+    top: 35%;
+    right: 3%;
+}
+
+.visited-cell{
+    background-color: aqua;
+}
+
+.gameOverScreen{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.scoreBox{
+    width: 50%;
+    height: 70%;
+    border-radius: 10%;
+    background-color: #1A102B;
+    border: 4px solid #6a0dad68;
+    box-shadow: 0 0 25px #C77DFF;
+    color: #F3E8FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: "VT323", monospace;
+}
+
+#winner{
+    font-size: 3.2em;
+}
+
+#score{
+    font-size: 2.5em;
+}
+
+body {
+    background-color: #141020;
+    background-image:
+        linear-gradient(rgba(100,80,180,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100,80,180,0.07) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+

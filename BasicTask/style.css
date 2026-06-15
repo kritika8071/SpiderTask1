@@ -1,0 +1,107 @@
+body{
+    background:
+    radial-gradient(circle at left,
+    rgb(18, 200, 217),
+    transparent 45%),
+    radial-gradient(circle at center,
+    rgb(18, 200, 217),
+    transparent 60%),
+    radial-gradient(circle at right,
+    rgb(18, 200, 217),
+    transparent 80%), rgb(141, 142, 203)
+}
+
+.inputBox{
+    background-color: orange;
+    height: min(300px, 40vw);
+    width: min(300px, 40vw);
+    border-radius: 3%;
+    background: radial-gradient(circle at center, rgba(18, 217, 167, 0.116), transparent 60%) rgba(68, 193, 143, 0.715);
+    border: 3px solid black;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scoreBoard{
+    width: min(700px, 50vw);
+    height: min(700px, 70vh);
+    border-radius: 3%;
+    display: none;
+    font-size: 30px;
+    position: relative;
+}
+
+#inputText{
+    font-size: 1.5rem;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 700;
+    position: relative;
+    top: 3rem; 
+}
+
+#numberBox{
+    height: 2rem;
+    width: 12rem;
+    position: relative;
+    left: 3rem;
+    top: 8rem;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    border-radius: 3%;
+    border: 3px solid black;
+}
+
+#submitBtn{
+    position:relative;
+    top: 12rem;
+    right: 5rem;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: 300px 100px;
+    margin-bottom: 15px;
+}
+
+.label{
+    font-weight: 500;
+}
+
+.value{
+    text-align: left;
+}
+
+#winner{
+    position: relative;
+    left: 9rem;
+    font-weight: 900;
+}
+
+#exitBtn{
+    height: 40px;
+    width: 100px;
+    border-radius: 3px;
+    border: 3px solid black;
+    font-size: 15px;
+    position: relative;
+    left: 50px;
+    margin-top: 10px;
+}
+
+#nextRoundBtn{
+    height: 40px;
+    width: 100px;
+    border-radius: 3px;
+    border: 3px solid black;
+    font-size: 15px;
+    position: relative;
+    left: 120px;
+    margin-top: 10px;
+}

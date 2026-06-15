@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hawkins Labyrinth</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <svg style="position:absolute; width:0; height:0">
+        <filter id="corrupt">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+            <feDisplacementMap in="SourceGraphic" scale="4"/>
+        </filter>
+    </svg>
+    <div class="game">
+    <div class="topPart">
+        <div id="playerHealth">Player Health: 150</div>
+        <div id="vecnaHealth">Vecna's Health: 5</div>
+    </div>
+    <div class="bottomPart">
+        <div class="container1">
+            <div id="dice"></div>
+            <div id="req">
+                <div id="top"></div>
+                <div id="right"></div>
+                <div id="bottom"></div>
+                <div id="left"></div>
+            </div>
+        </div>
+        <div class="container2">
+        <div class="container">
+        </div>
+    </div>
+    </div>
+    <div id="spider">🕷️</div>
+    </div>
+    
+    <div class="gameOverScreen">
+        <div class="scoreBox">
+            <div id="winner"></div>
+            <div id="score"></div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
