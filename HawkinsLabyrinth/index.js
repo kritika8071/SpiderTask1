@@ -125,6 +125,7 @@ function movePlayer(cell){
         else{
             currentCell.element.classList.add("upside-down");
         }
+        changePlayerHealth(currentCell);
         cellState = { up: false, down: false, left: false, right: false };
         keys = { up: false, down: false, left: false, right: false };
         diceState = true;
@@ -259,7 +260,6 @@ dice.addEventListener("click", ()=>{
         updateUnlockNos(currentCell);
         unlockCells(currentCell);
         movePlayer(currentCell);
-        changePlayerHealth(currentCell);
         checkExit(currentCell);
         turnNumber++;        
     }
